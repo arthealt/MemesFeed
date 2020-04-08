@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Memes Feed</string>
+    <string name="main_label">Популярные мемы</string>
 </resources>
