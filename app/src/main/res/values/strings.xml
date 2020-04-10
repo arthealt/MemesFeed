@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">Memes Feed</string>
     <string name="main_label">Популярные мемы</string>
+    <string name="login">Логин</string>
+    <string name="password">Пароль</string>
+    <string name="auth">Войти</string>
 </resources>

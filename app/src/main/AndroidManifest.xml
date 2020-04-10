@@ -14,7 +14,8 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
         <activity android:name=".LoginActivity"
-            android:theme="@style/SplashScreenTheme">
+            android:theme="@style/SplashScreenTheme"
+            android:windowSoftInputMode="adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

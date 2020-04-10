@@ -6,12 +6,33 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <!-- Login Activity -->
     <style name="LoginTheme" parent="AppTheme">
         <item name="colorPrimaryDark">@color/colorPrimaryDarkLogin</item>
         <item name="android:windowBackground">@color/colorPrimaryDarkLogin</item>
     </style>
 
+    <!-- Splash screen -->
     <style name="SplashScreenTheme" parent="LoginTheme">
         <item name="android:windowBackground">@drawable/splash_screen</item>
     </style>
+
+    <!-- Login TextInputLayout -->
+    <style name="LoginTextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
+
+        <item name="boxBackgroundColor">@color/colorPrimary</item>
+
+        <item name="helperTextTextColor">@color/colorTextEditText</item>
+
+        <item name="errorTextColor">@color/colorError</item>
+        <item name="boxStrokeErrorColor">@color/colorError</item>
+
+        <item name="boxStrokeColor">@color/box_stroke_color</item>
+        <item name="boxStrokeWidth">1dp</item>
+
+        <item name="hintTextColor">@color/colorAccent</item>
+        <item name="android:textColorHint">@color/colorHintEdit</item>
+
+    </style>
+
 </resources>
