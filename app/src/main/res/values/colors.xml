@@ -3,7 +3,7 @@
     <color name="colorPrimary">#312F51</color>
     <color name="colorPrimaryDark">#312F51</color>
     <color name="colorAccent">#1EF0D7</color>
-    <color name="colorPrimaryDarkLogin">#23213F</color>
+    <color name="colorBackground">#23213F</color>
     <color name="colorTextEditText">#FFF</color>
     <color name="colorHintEdit">#8AFFFFFF</color>
     <color name="colorError">#FF575D</color>

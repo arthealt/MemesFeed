@@ -16,6 +16,12 @@ class LoginActivity : AppCompatActivity() {
 
         // hide actionBar
         supportActionBar?.hide()
+
+        btn_auth.setOnClickListener {
+            progress_bar.visibility = View.VISIBLE
+            btn_auth.text = ""
+            btn_auth.isEnabled = false
+        }
     }
 
     private fun snackError(error: String) {

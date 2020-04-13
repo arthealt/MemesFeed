@@ -4,7 +4,7 @@
     package="com.example.memesfeed">
 
     <application
-        android:name=".App"
+        android:name=".di.App"
         android:allowBackup="true"
         android:fullBackupContent="false"
         android:icon="@mipmap/ic_launcher"

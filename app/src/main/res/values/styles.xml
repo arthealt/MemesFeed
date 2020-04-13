@@ -8,8 +8,8 @@
 
     <!-- Login Activity -->
     <style name="LoginTheme" parent="AppTheme">
-        <item name="colorPrimaryDark">@color/colorPrimaryDarkLogin</item>
-        <item name="android:windowBackground">@color/colorPrimaryDarkLogin</item>
+        <item name="colorPrimaryDark">@color/colorBackground</item>
+        <item name="android:windowBackground">@color/colorBackground</item>
     </style>
 
     <!-- Splash screen -->
@@ -33,6 +33,11 @@
         <item name="hintTextColor">@color/colorAccent</item>
         <item name="android:textColorHint">@color/colorHintEdit</item>
 
+    </style>
+
+    <!-- ProgressBar in button login -->
+    <style name="ProgressBarButton">
+        <item name="android:colorAccent">@color/white</item>
     </style>
 
 </resources>
