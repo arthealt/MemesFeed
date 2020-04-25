@@ -3,6 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.memesfeed">
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:name=".di.App"
         android:allowBackup="true"
@@ -13,7 +16,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".LoginActivity"
+        <activity
+            android:name=".application.activity.MainActivity"
+            android:label="@string/main_label"/>
+        <activity
+            android:name=".application.activity.LoginActivity"
             android:theme="@style/SplashScreenTheme"
             android:windowSoftInputMode="adjustResize">
             <intent-filter>

@@ -4,4 +4,8 @@
     <string name="login">Логин</string>
     <string name="password">Пароль</string>
     <string name="auth">Войти</string>
+    <string name="empty_field">Поле не может быть пустым</string>
+    <string name="password_short">Пароль должен содержать 6 символов</string>
+    <string name="error_connection">При загрузке данных произошла ошибка. Проверьте ваше подключение</string>
+    <string name="error_unexpected">Произошла непредвиденная ошибка. Повторите попытку позже</string>
 </resources>

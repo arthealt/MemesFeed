@@ -1,5 +1,6 @@
 package com.example.memesfeed.di.module
 
+import com.example.memesfeed.data.remote.ApiService
 import com.example.memesfeed.di.scope.PerApplication
 import dagger.Module
 import dagger.Provides
@@ -12,14 +13,18 @@ class NetworkModule {
 
     @Provides
     @PerApplication
-    fun provideOkHttpClient() = OkHttpClient().newBuilder().build()
+    fun provideOkHttpClient(): OkHttpClient = OkHttpClient().newBuilder().build()
 
     @Provides
     @PerApplication
-    fun provideRetrofit(client: OkHttpClient) = Retrofit.Builder()
+    fun provideRetrofit(client: OkHttpClient): Retrofit = Retrofit.Builder()
         .baseUrl("https://demo2407529.mockable.io/")
         .client(client)
         .addConverterFactory(GsonConverterFactory.create())
         .build()
+
+    @Provides
+    @PerApplication
+    fun provideApiService(retrofit: Retrofit): ApiService = retrofit.create(ApiService::class.java)
 
 }
