@@ -4,12 +4,14 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowBackground">@color/colorBackground</item>
     </style>
 
     <!-- Login Activity -->
     <style name="LoginTheme" parent="AppTheme">
-        <item name="colorPrimaryDark">@color/colorPrimaryDarkLogin</item>
-        <item name="android:windowBackground">@color/colorPrimaryDarkLogin</item>
+        <item name="colorPrimaryDark">@color/colorBackground</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
     </style>
 
     <!-- Splash screen -->
@@ -17,8 +19,8 @@
         <item name="android:windowBackground">@drawable/splash_screen</item>
     </style>
 
-    <!-- Login TextInputLayout -->
-    <style name="LoginTextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
+    <!-- Auth TextInputLayout -->
+    <style name="AuthTextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
 
         <item name="boxBackgroundColor">@color/colorPrimary</item>
 
@@ -33,6 +35,17 @@
         <item name="hintTextColor">@color/colorAccent</item>
         <item name="android:textColorHint">@color/colorHintEdit</item>
 
+    </style>
+
+    <!-- Auth TextInputEditText -->
+    <style name="AuthTextInputEditText" parent="Widget.AppCompat.EditText">
+        <item name="android:singleLine">true</item>
+        <item name="android:textColor">@color/colorTextEditText</item>
+    </style>
+
+    <!-- ProgressBar in button login -->
+    <style name="ProgressBarButton">
+        <item name="android:colorAccent">@color/white</item>
     </style>
 
 </resources>

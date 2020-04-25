@@ -4,17 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginActivity">
+    tools:context=".application.activity.LoginActivity">
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/login"
+        android:id="@+id/login_input"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="60dp"
         android:layout_marginEnd="16dp"
-        style="@style/LoginTextInputLayout"
         android:hint="@string/login"
+        style="@style/AuthTextInputLayout"
         app:hintEnabled="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -24,50 +24,74 @@
             android:id="@+id/login_edit_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/colorTextEditText" />
+            style="@style/AuthTextInputEditText" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/password"
-        style="@style/LoginTextInputLayout"
+        android:id="@+id/password_input"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:hint="@string/password"
+        style="@style/AuthTextInputLayout"
         app:passwordToggleEnabled="true"
         app:passwordToggleTint="@color/colorAccent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/login">
+        app:layout_constraintTop_toBottomOf="@+id/login_input">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/password_edit_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/colorTextEditText"
+            style="@style/AuthTextInputEditText"
             android:inputType="textPassword"/>
 
     </com.google.android.material.textfield.TextInputLayout>
 
-    <Button
-        android:id="@+id/btn_auth"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/colorAccent"
-        android:textColor="@color/colorPrimaryDarkLogin"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:insetTop="0dp"
-        android:insetBottom="0dp"
-        android:textAllCaps="true"
-        android:text="@string/auth" />
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:translationZ="5dp"
+            android:visibility="gone"
+            android:indeterminate="true"
+            android:indeterminateTintMode="src_atop"
+            android:indeterminateTint="@color/colorBackground"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btn_auth"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/colorAccent"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:text="@string/auth"
+            android:textAllCaps="true"
+            android:textColor="@color/colorBackground"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <View
         android:id="@+id/snack_bar"
