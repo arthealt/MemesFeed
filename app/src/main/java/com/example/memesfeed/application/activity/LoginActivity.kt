@@ -55,7 +55,7 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
                 }
             } else {
                 hideKeyboard()
-                snackError(getString(R.string.error_connection))
+                viewModel.state.apply { value = StateLogin.ErrorLogin(getString(R.string.error_connection)) }
             }
 
             viewModel.state.observe(this, Observer { value ->
