@@ -1,6 +1,6 @@
 package com.example.memesfeed.di.module
 
-import com.example.memesfeed.data.remote.ApiService
+import com.example.memesfeed.data.remote.services.AuthService
 import com.example.memesfeed.di.scope.PerApplication
 import dagger.Module
 import dagger.Provides
@@ -25,6 +25,7 @@ class NetworkModule {
 
     @Provides
     @PerApplication
-    fun provideApiService(retrofit: Retrofit): ApiService = retrofit.create(ApiService::class.java)
+    fun provideApiService(retrofit: Retrofit): AuthService = retrofit.create(
+        AuthService::class.java)
 
 }

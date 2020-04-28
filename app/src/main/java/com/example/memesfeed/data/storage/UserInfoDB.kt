@@ -1,4 +1,4 @@
-package com.example.memesfeed.application.helpers
+package com.example.memesfeed.data.storage
 
 class UserInfoDB {
     companion object {

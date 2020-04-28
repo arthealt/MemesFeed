@@ -1,9 +1,7 @@
 package com.example.memesfeed.di.component
 
 import android.app.Application
-import android.content.Context
 import com.example.memesfeed.application.activity.LoginActivity
-import com.example.memesfeed.application.helpers.Util
 import com.example.memesfeed.di.module.AppModule
 import com.example.memesfeed.di.module.NetworkModule
 import com.example.memesfeed.di.module.StorageModule

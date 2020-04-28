@@ -1,12 +1,13 @@
-package com.example.memesfeed.application.helpers
+package com.example.memesfeed.application.utils
 
 import android.content.Context
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
 import android.os.Build
+import com.example.memesfeed.R
 import javax.inject.Inject
 
-class Util @Inject constructor(private val context: Context) {
+class NetworkUtil @Inject constructor(private val context: Context) {
 
     fun isInternetConnection(): Boolean {
 
@@ -34,5 +35,7 @@ class Util @Inject constructor(private val context: Context) {
         }
         return false
     }
+
+    fun getErrorConnection(): String = context.getString(R.string.error_connection)
 
 }

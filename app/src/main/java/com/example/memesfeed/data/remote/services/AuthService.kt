@@ -1,4 +1,4 @@
-package com.example.memesfeed.data.remote
+package com.example.memesfeed.data.remote.services
 
 import com.example.memesfeed.data.remote.models.AuthInfoDto
 import com.example.memesfeed.data.remote.models.LoginUserRequestDto
@@ -8,12 +8,9 @@ import retrofit2.http.FormUrlEncoded
 import retrofit2.http.GET
 import retrofit2.http.POST
 
-interface ApiService {
+interface AuthService {
 
     @POST("auth/login")
     suspend fun auth(@Body user: LoginUserRequestDto): AuthInfoDto
-
-    @GET("memes")
-    suspend fun getMemes(): MemDto
 
 }

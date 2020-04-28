@@ -1,32 +1,49 @@
 package com.example.memesfeed.application.viewmodels
 
 import androidx.lifecycle.*
-import com.example.memesfeed.application.intent.StateLogin
+import com.example.memesfeed.application.utils.NetworkUtil
+import com.example.memesfeed.application.intent.ScreenState
 import com.example.memesfeed.data.remote.models.LoginUserRequestDto
+import com.example.memesfeed.data.storage.UserStorage
 import com.example.memesfeed.domain.LoginRepository
 import kotlinx.coroutines.*
 
-class LoginViewModel (private val repository: LoginRepository): ViewModel(), LifecycleObserver {
+class LoginViewModel (
+    private val networkUtil: NetworkUtil,
+    private val repository: LoginRepository,
+    private val userStorage: UserStorage
+): ViewModel(), LifecycleObserver {
 
-    val state: MutableLiveData<StateLogin> = MutableLiveData<StateLogin>().apply { value = StateLogin.NormalState }
+    val state: MutableLiveData<ScreenState> =MutableLiveData<ScreenState>().apply {
+        value = ScreenState.NormalState
+    }
 
     private val viewModelJob = Job()
     private val viewModelScope = CoroutineScope(Dispatchers.IO + viewModelJob)
 
-    fun auth(user: LoginUserRequestDto) {
-        state.apply { value = StateLogin.LoadingState }
-        viewModelScope.launch {
-            try {
-                repository.auth(user)
+    fun auth(login: String, password: String) {
 
-                launch(Dispatchers.Main) {
-                    state.apply { value = StateLogin.SuccessLogin }
-                }
-            } catch (error: Exception) {
-                launch(Dispatchers.Main) {
-                    state.apply { value = StateLogin.ErrorLogin(error.message) }
+        state.apply { value = ScreenState.LoadingState }
+
+        if (networkUtil.isInternetConnection()) {
+            val user = LoginUserRequestDto(login, password)
+
+            viewModelScope.launch {
+                try {
+                    val authInfo = repository.auth(user)
+                    userStorage.saveUser(authInfo)
+
+                    launch(Dispatchers.Main) {
+                        state.apply { value = ScreenState.SuccessState }
+                    }
+                } catch (error: Exception) {
+                    launch(Dispatchers.Main) {
+                        state.apply { value = ScreenState.ErrorState(error.message) }
+                    }
                 }
             }
+        } else {
+            state.apply { value = ScreenState.ErrorState(networkUtil.getErrorConnection()) }
         }
     }
 
